@@ -1,0 +1,60 @@
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <ion-title>Ma panier</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" class="btnBar" (click)="saveAsFav()">
+        <!-- <ion-icon name="ios-add-outline" class="heartIcon"></ion-icon> -->
+        <ion-badge class="heartIcon" color="danger">+</ion-badge>
+        <ion-icon name="md-heart" class="ionAdd"></ion-icon>
+      </button>
+  </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+<ion-card>
+    <ion-card-header color="primary">
+     <i class="fa fa-cart-plus" style="margin-right: 15px; font-size: 25px;"></i>
+      Mon panier
+    </ion-card-header>
+    <hr>
+    <img *ngIf="list.length==0" src="assets/imgs/sad.png" style="width:30px;display: table;font-size: 25px; align-items: center ; margin-left: auto; margin-right:auto;align-content: center;" >
+    <p *ngIf="list.length==0" style="color:#e8d9d1;display: table;font-size: 25px; align-items: center ; margin-left: auto; margin-right:auto;align-content: center;">
+        
+      Pas encore ?
+
+    </p>
+    <ion-list no-lines>
+        <ion-item *ngFor="let p of list ; let i = index">
+            <ion-thumbnail item-start>
+              <img src="{{p.imageProduit}}">
+            </ion-thumbnail>
+            <h2>{{p.titreCoffee}}</h2>
+            <p><ion-badge item-end> Prix : {{p.prix}} DT</ion-badge>
+            </p>        
+              <ion-icon name="md-remove-circle" item-right color="primary" (click)="removeItem(i)"></ion-icon>
+        </ion-item>
+
+      </ion-list>
+      <hr>
+      <p class="price">
+        <i class="fa fa-usd" style="margin-right: 5px; font-size: 25px;"></i>
+          Prix total : {{totalprice}} DT   
+      </p>
+            
+      
+    
+  </ion-card>
+</ion-content>
+
+  
+<ion-footer color="secondary">
+      <button ion-button clear full color="primary" (click)="commander()"><ion-icon name="md-card" style="margin-right:15px"></ion-icon> Commander</button>
+</ion-footer>
+

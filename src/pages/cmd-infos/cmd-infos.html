@@ -1,0 +1,52 @@
+<!--
+  Generated template for the CmdInfosPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <ion-title>Ma commande</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-card>
+    <ion-card-header color="primary">
+      <i class="fa fa-clock" style="margin-right: 15px; font-size: 25px;"></i>
+      Date de commande : {{prod.datecommande | date:"hh:MM dd/mm/yyyy"}}
+    </ion-card-header>
+    <hr>
+
+    <ion-list no-lines>
+      <ion-item *ngFor="let p of this.prod.listProds">
+        <ion-thumbnail item-start>
+          <img src="{{p.imageProduit}}">
+        </ion-thumbnail>
+        <h2>{{p.titreCoffee}}</h2>
+        <p>
+          <ion-badge item-end> Prix : {{p.prix}} DT</ion-badge>
+        </p>
+        
+      </ion-item>
+
+    </ion-list>
+    <hr>
+    <p class="price">
+      Etat de commande :
+       <span *ngIf="prod.traited=='false' " color="danger">En cours ...</span>
+       <span *ngIf="prod.traited=='processed' " color="info">Prête</span>
+       <span *ngIf="prod.traited=='true'" color="succ">Servit et payé</span>
+    </p>
+    <p class="price">
+      Prix total : {{this.prod.totalprice}} DT
+    </p>
+
+
+
+  </ion-card>
+</ion-content>

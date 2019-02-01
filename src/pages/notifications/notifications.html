@@ -1,0 +1,21 @@
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <ion-title>Mes notifications</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <ion-card *ngFor="let item of listNotifs | async">
+    <ion-card-header>
+      Date de notification : {{ item.date | date:'HH:mm dd/MM/yyyy' }}
+    </ion-card-header>
+    <ion-card-content text-wrap>
+      {{item.subject}}
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

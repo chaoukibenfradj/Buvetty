@@ -1,0 +1,47 @@
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <ion-title>Mettre un commentaire</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <div class="login-box">
+    <ion-row>
+      <ion-col></ion-col>
+      <ion-col>
+        <img class="imgProfile" [(src)]="product.imageProduit" />
+      </ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-card-title style="color:#faae54;margin-left: auto; margin-right: auto; display: table; margin-top:10px ; font-size:24px; font-weight: 600;">
+        <b>{{product.titreCoffee}}</b>
+      </ion-card-title>
+    <hr style="widows: 70%;">
+
+    <form (ngSubmit)="commenter()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item>
+              <ion-icon name="ios-chatbubbles-outline" class="ico" item-left></ion-icon>
+              <ion-textarea required name="commentaire" placeholder="Mettre votre commentaire ..." [(ngModel)]="commentaire.contenu"></ion-textarea>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Commenter</button>
+
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+
+</ion-content>

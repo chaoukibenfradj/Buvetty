@@ -1,0 +1,72 @@
+<ion-header no-border>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Inscription</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" padding>
+  <div class="login-box">
+    <form #registerForm="ngForm">
+
+        <ion-row (click)="uploadPicture()">
+          <ion-col></ion-col>
+          <ion-col>
+            <img class="imgProfile" [(src)]="profileUser.profileImage" />
+          </ion-col>
+          <ion-col></ion-col>
+        </ion-row>
+
+      <ion-row>
+        <ion-col>
+          <ion-list no-lines>
+            
+            <ion-item>
+              <ion-icon name="ios-person-outline" item-left></ion-icon>
+           
+              <ion-input [(ngModel)]="profileUser.nomPrenom" type="text" placeholder="Nom & Prénom"  name="nomPrenom"  required></ion-input>
+            </ion-item>
+
+                <ion-item>
+                <ion-icon name="ios-calendar-outline" item-left></ion-icon>
+                <ion-datetime [(ngModel)]="profileUser.dateNaissance" name="dateNaissance" placeholder="Date de naissance" displayFormat="MM/DD/YYYY" pickerFormat="DD MMMM YYYY" [ngModelOptions]="{standalone: true}" [(ngModel)]="userCreds.dateNaissance"></ion-datetime>
+              </ion-item>
+  
+
+                <ion-item>
+                  <ion-icon name="ios-people-outline" item-left></ion-icon>
+                  <ion-select name="sexe" [(ngModel)]="profileUser.sexe" class="mySelect" required>
+                      <ion-option value="h"> Homme</ion-option>
+                      <ion-option value="f">Femme</ion-option>
+
+                  </ion-select>
+
+                </ion-item>
+
+            <ion-item>
+                <ion-icon name="ios-at-outline" item-left></ion-icon>
+            
+                <ion-input [(ngModel)]="profileUser.email" type="email" placeholder="E-mail"  name="email"  required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                  <ion-icon name="ios-lock-outline" item-left></ion-icon>
+                
+                  <ion-input [(ngModel)]="profileUser.password" type="password" placeholder="Mot de passe"  name="password"  required></ion-input>
+                </ion-item>
+    
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" (click)="creerCompte()" full type="submit" [disabled]="!registerForm.form.valid">Créer mon compte</button>
+        </ion-col>
+      </ion-row>
+      
+    </form>
+  </div>
+</ion-content>

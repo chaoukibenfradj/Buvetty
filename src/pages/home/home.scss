@@ -1,0 +1,69 @@
+page-home {
+  .mainContent {
+    background-image: url(../assets/imgs/bg.png);
+    background-size: 38%;
+    background-repeat: repeat;
+  }
+  .btnBar{
+      ion-badge {
+        position: absolute;
+        top: -0.5rem;
+        right: 0px ;
+        opacity: 0.9;
+        font-size: 9px ;
+        border-radius: 50% ;
+        padding-top: 6px;
+        padding-right : 6px ;padding-left:6px ;
+        & ~ ion-icon {
+          font-size:28px !important ;
+          margin-right: 1.0rem;
+        }
+      }
+  }
+  .center {
+    text-align: center;
+    margin-top: 20px;
+    margin-left: 200px;
+    margin-bottom: 10px;
+  }
+  ion-card img {
+    margin-left: auto;
+    margin-right: auto;
+    align-content: center;
+    width: 100px !important;
+    padding: 5px;
+    height: 100px !important;
+  }
+  .card-md {
+    //background: transparent !important;
+
+    align-items: center;
+    width: 200% !important;
+    border-radius: 25px !important;
+    border: 1px solid #faae54;
+
+  }
+
+
+  .myHr{
+    background-color: #faae54;
+  }
+
+  ion-card-title {
+    font-weight: 600;
+    font-style: italic ;
+    font-size: 20px !important;
+    //font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #faae54 !important;
+    text-align: center;
+    font-family: fantasy ;
+  }
+  ion-grid {
+    margin-left: -5px !important ;
+    margin-top: 50px !important;
+  }
+  .button-md{
+    height: inherit;
+  }
+}

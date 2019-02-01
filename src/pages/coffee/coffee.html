@@ -1,0 +1,64 @@
+<ion-header no-border>
+       <ion-navbar color="primary">
+        <ion-title *ngIf="prodType=='coffee'">Cafés</ion-title>
+        <ion-title *ngIf="prodType=='nourriture'">Nourritures</ion-title>
+        <ion-title *ngIf="prodType=='gateau'">Gâteaux</ion-title>
+        <ion-title *ngIf="prodType=='boisson'">Boissons</ion-title>
+        <ion-buttons end>
+            <button ion-button icon-only color="royal" (click)="viewToggle()">
+                <ion-icon name="ios-grid-outline" ></ion-icon>
+              </button>
+              <button ion-button icon-only color="royal" class="btnBar"  (click)="openMyCommandes()">
+                <ion-badge #myBadge color="secondary">{{fireBaseProvider.getProdQuantity()}}</ion-badge>
+                <ion-icon name="ios-basket" ></ion-icon>
+              </button>
+        </ion-buttons>
+
+
+
+      </ion-navbar>
+</ion-header>
+
+
+<ion-content class="mainContainer">
+  <ion-spinner *ngIf="spin" color="primary"></ion-spinner>
+  <div *ngIf="!this.mode">
+    <ion-list #listAnim no-lines>
+        <button ion-item *ngFor="let p of listCoffee | async" >
+            <ion-thumbnail item-start (click)="showProdInfo(p.key)">
+              <img src="{{p.imageProduit}}">
+            </ion-thumbnail>
+            <h2 (click)="showProdInfo(p.key)">{{p.titreCoffee}}</h2>
+            <p (click)="showProdInfo(p.key)">{{p.info}}</p>
+            <p (click)="showProdInfo(p.key)" *ngIf="p.remise!=true && !p.remise"><ion-badge item-end> Prix : {{p.prix}} DT</ion-badge>
+            </p>
+            <p *ngIf="p.remise==true && p.remise">
+              <ion-badge color="secondary" style="text-decoration: line-through !important;" item-right>Prix : {{p.prix}} DT</ion-badge>
+             <br> <ion-badge>Remise : {{p.prixRemise}} DT</ion-badge>
+            </p>
+
+          <button ion-button clear item-end (click)="commander(p)"><ion-icon name="md-add" style="font-size: 25px;"></ion-icon></button>
+          </button>
+      </ion-list>
+    </div>
+
+      <div #listAnim *ngIf="this.mode">
+      <ion-card  *ngFor="let p of listCoffee | async">
+
+          <img src="{{p.imageProduit}}">
+      
+          <ion-card-content>
+            <ion-card-title>
+                {{p.titreCoffee}}
+            </ion-card-title>
+            <p>
+                {{p.info}}            
+              </p>
+              <p>
+                  <ion-badge item-end> Prix : {{p.prix}} DT</ion-badge>
+              </p>
+          </ion-card-content>
+        </ion-card> 
+      </div>
+
+</ion-content>

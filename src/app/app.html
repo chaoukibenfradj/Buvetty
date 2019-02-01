@@ -1,0 +1,59 @@
+<ion-menu [content]="content">
+  <ion-header no-border>
+
+  </ion-header>
+
+  <ion-content class="bgMenu">
+    <ion-row>
+      <ion-col style="width: 100px;">
+        <img class="imgProfile" *ngIf="userProfile.profileImage!='assets/imgs/defaultUser.png'" [src]="userProfile.profileImage">
+        <img class="imgProfile" *ngIf="userProfile.profileImage=='assets/imgs/defaultUser.png'" src="assets/imgs/defaultUser.png">
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+        <ion-col>
+            <span class="userName">{{userProfile.nomPrenom}}</span>
+          </ion-col>
+    </ion-row>
+    <hr style="width: 50%;margin-top: 24px;">
+        
+      <ion-row>
+
+      <ion-col>
+
+          <ion-list no-lines>
+            
+          <button ion-item class="listItem" *ngFor="let item of pages" (click)="openPage(item)">
+          <i class="fa fa-{{item.iconName}}"></i>
+          <span class="spanText">
+          {{item.title}}
+          </span>
+
+          </button>
+
+
+
+      </ion-list>
+    </ion-col>
+    </ion-row>
+  </ion-content>
+
+<ion-footer (click)="logOut()">
+
+
+      <button ion-button clear full><i class="fa fa-sign-out"></i>
+        <span class="spanText">  
+        Se déconnecter
+        </span>
+      </button>
+
+
+
+</ion-footer>
+
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

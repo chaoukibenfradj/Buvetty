@@ -1,0 +1,46 @@
+<ion-content class="login-content" padding>
+
+  <ion-row class="logo-row">
+    <ion-col></ion-col>
+    <ion-col>
+      <img src="assets/imgs/logo.png" />
+    </ion-col>
+    <ion-col></ion-col>
+  </ion-row>
+  <div class="login-box">
+    <form (ngSubmit)="login()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+          <ion-list no-lines>
+            <ion-item>
+              <ion-icon name="ios-at-outline" item-left></ion-icon>
+              <ion-input type="email" placeholder="Email" name="email" [(ngModel)]="loginCreds.email" ></ion-input>
+            </ion-item>
+            <ion-item>
+
+              <ion-icon name="ios-lock-outline" item-left></ion-icon>
+
+              <ion-input type="password" placeholder="Mot de passe" name="password" [(ngModel)]="loginCreds.password" ></ion-input>
+            </ion-item>
+
+          </ion-list>
+        </ion-col>
+      </ion-row>
+      <button ion-button class="mdp-btn" [navPush]="creatAccount" clear>Mot de passe oublié ?</button>
+
+      <ion-row>
+        <ion-col class="signup-col">
+          <button ion-button class="submit-btn" full type="submit" [disabled]="!registerForm.form.valid">Se connecter</button>
+          
+        </ion-col>
+      </ion-row>
+
+    </form>
+  </div>
+  <div class="notMember">
+    Pas Inscrit ?
+    <button ion-button class="register-btn" [navPush]="creatAccount" clear>Créer un compte</button>
+  </div>
+  
+  
+</ion-content>

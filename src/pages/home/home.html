@@ -1,0 +1,79 @@
+<ion-header no-border> 
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Accueil</ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal" class="btnBar" (click)="openMyCommandes()">
+          <ion-badge color="secondary">{{fireBaseProvider.getProdQuantity()}}</ion-badge>
+          <ion-icon name="ios-basket" ></ion-icon>
+        </button>
+    </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+<ion-content class="mainContent">
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3>
+
+        <ion-card (click)="toCoffeePage('coffee')" #elementCard>
+          <ion-card-content>
+            <img src="assets/imgs/menu/coffee.png" />
+            <hr class="myHr">
+            <ion-card-title>
+              Café
+            </ion-card-title>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+      <ion-col col-3 offset-3>
+
+        <ion-card (click)="toCoffeePage('nourriture')">
+          <ion-card-content>
+            <img src="assets/imgs/menu/mekla.png" />
+            <hr class="myHr">
+            <ion-card-title>
+              Nourriture
+            </ion-card-title>
+          </ion-card-content>
+
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+        <ion-col col-3>
+          
+            <ion-card (click)="toCoffeePage('gateau')">                
+                <ion-card-content>
+                  <img src="assets/imgs/menu/gateau.png"/>
+                  <hr class="myHr">
+                    <ion-card-title>
+                     Gâteaux 
+                    </ion-card-title>
+                </ion-card-content>
+              </ion-card>
+        </ion-col>
+        <ion-col col-3 offset-3>
+         
+            <ion-card (click)="toCoffeePage('boisson')">                
+                <ion-card-content>
+                  <img src="assets/imgs/menu/boisson.png"/>
+                  <hr class="myHr">
+                  <ion-card-title>
+                      Boissons 
+                     </ion-card-title>
+                </ion-card-content>
+                
+              </ion-card>
+
+
+
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-content>

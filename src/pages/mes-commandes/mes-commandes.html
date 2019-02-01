@@ -1,0 +1,27 @@
+<ion-header no-border>
+
+  <ion-navbar color="primary">
+    <ion-title>Mes Commandes</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-spinner color="primary" *ngIf="spin"></ion-spinner>
+    <ion-item *ngFor="let item of listCmds | async">
+      <ion-icon name="ios-card" (click)="showCmdInfos(item)" item-start></ion-icon>
+        <p (click)="showCmdInfos(item)">Date : {{item.datecommande | date:'dd/MM/yy HH:mm' }}</p>
+        <p (click)="showCmdInfos(item)">Prix total : {{item.totalprice}} DT</p>
+      <button ion-button clear *ngIf="item.traited=='false' || item.traited=='processed'" item-end (click)="showQrCode(item.key)" >
+
+        <ion-icon name="md-qr-scanner" ></ion-icon>
+
+      </button>
+      
+    </ion-item>
+  </ion-list>
+
+</ion-content>

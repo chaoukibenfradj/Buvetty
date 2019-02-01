@@ -1,0 +1,64 @@
+<ion-header no-border #head>
+
+  <ion-navbar color="primary">
+    <ion-title>{{product.titreCoffee}}</ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="commenter(this.keyProd)">
+        <ion-icon name="ios-chatbubbles-outline"></ion-icon>
+      </button>
+
+    </ion-buttons>
+
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content hide-header [header]="head">
+
+
+  <ion-card>
+    <img [src]="product.imageProduit" />
+    <ion-card-content>
+      <ion-card-title style="color:#faae54;margin-left: auto; margin-right: auto; display: table; margin-top:10px ; font-size:24px; font-weight: 600;">
+        <b>{{product.titreCoffee}}</b>
+      </ion-card-title>
+      <hr style="width:70%;">
+      <b style="color:#faae54;">Information : </b>
+      {{product.info}}
+      <hr style="width:70%;">
+      <p style="margin-left: auto; margin-right: auto; display: table; margin-top:10px ; font-size:15px; font-weight: 600;">
+        <ion-badge>Prix : {{product.prix}} DT</ion-badge>
+      </p>
+    </ion-card-content>
+  </ion-card>
+  <hr style="width:70%;">
+  <p style="color :#faae54;margin-left: auto; margin-right: auto; display: table; margin-top:10px ; font-size:18px; font-weight: 600;">
+    Commentaire
+  </p>
+  <hr style="width:70%;">
+  <img *ngIf="!listCommentaire" src="assets/imgs/sad.png" style="width:30px;display: table;font-size: 25px; align-items: center ; margin-left: auto; margin-right:auto;align-content: center;">
+  <p *ngIf="!listCommentaire" style="color:#e8d9d1;display: table;font-size: 25px; align-items: center ; margin-left: auto; margin-right:auto;align-content: center;">
+
+    Pas de commentaire
+
+  </p>
+  <ion-list no-lines *ngIf="listCommentaire">
+    <ion-item *ngFor=" let com of listCommentaire">
+      <ion-avatar item-start>
+        <img [src]="com.user.profileImage">
+      </ion-avatar>
+      <h2>{{com.user.nomPrenom}}</h2>
+      <p class="date">{{com.dateCommentaire | date:'dd/MM/yy HH:mm' }}</p>
+      <p text-wrap>{{com.contenu}}</p>
+    </ion-item>
+    <hr>
+  </ion-list>
+
+
+
+
+
+
+</ion-content>

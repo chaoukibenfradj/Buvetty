@@ -1,0 +1,36 @@
+page-coffee {
+  ion-content {
+    background-image: url(../assets/imgs/bg.png);
+    background-size: 38%;
+    background-repeat: repeat;
+  }
+  ion-card-content {
+    background-image: url(../assets/imgs/bg.png);
+    background-size: 38%;
+    background-repeat: repeat;
+  }
+  ion-spinner{
+      margin-top: 20px ;
+      margin-left: auto ; 
+      margin-right: auto ; 
+      display: table; 
+  }
+  .btnBar {
+    ion-badge {
+      position: absolute;
+      top: -0.5rem;
+      right: 0px;
+      opacity: 0.9;
+      font-size: 9px;
+      border-radius: 50%;
+      padding-top: 6px;
+      padding-right: 6px;
+      padding-left: 6px;
+      display: table;
+      &~ion-icon {
+        font-size: 28px !important;
+        margin-right: 1.0rem;
+      }
+    }
+  }
+}

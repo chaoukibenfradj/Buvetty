@@ -1,0 +1,90 @@
+.bgMenu {
+  background-image: url(../assets/imgs/bg.png);
+  background-size: 38%;
+  background-repeat: repeat;
+}
+
+.userName {
+  font-size: 18px;
+  color: #faae54;
+  font-weight: 500;
+  background-color: rgba($color: #7d7d7d, $alpha: 0.2);
+  border-radius: 30px;
+  padding: 5px 10px 5px 10px;
+}
+
+.imgProfile {
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 100px;
+  max-height: 100px;
+  width: 100%;
+  height: auto;
+  border: #faae54 1px solid;
+  border-radius: 50%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.listItem {
+  // background-color: rgba($color: #000000, $alpha: 0.0);
+  color: #7d7d7d;
+  padding-top: 10px;
+  font-size: 18px;
+  font-family: Arial, sans-serif;
+  font-weight: 500;
+  padding-bottom: 10px;
+  -webkit-font-smoothing: antialiased;
+}
+
+ion-row {
+  align-items: center;
+  text-align: center;
+}
+
+i {
+  color: #faae54 !important;
+  font-size: 18px !important ;
+}
+
+ion-item {
+  color: #7d7d7d !important;
+  font-size: 20px !important;
+}
+
+hr {
+  background-color: #faae54 !important;
+}
+
+.toolbar-md {
+  padding: 4px;
+  min-height: 48px;
+}
+
+.toolbar-title-md {
+  padding: 0px 0px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.list-md .item-block .item-inner {
+  border-bottom: 1px solid #faae54;
+}
+
+i{
+  padding-right: 12px;
+  border-right: 0.05px solid ;
+  font-size: 20px ;
+}
+
+.spanText{
+  padding-left: 9px;
+}
+
+.loading-wrapper{
+
+  border-radius: 13px !important ;
+
+}

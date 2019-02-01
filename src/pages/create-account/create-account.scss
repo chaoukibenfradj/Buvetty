@@ -1,0 +1,119 @@
+page-create-account {
+  .imgProfile{
+    width: 250%;
+    height: auto;
+    display: block;
+    border: #faae54 1px solid;
+    margin-bottom: 15px;
+  }
+  .scroll-content{
+    margin-top: 25px !important ;
+  }
+  img {
+    max-width: 200px;
+    max-height: 200px ;
+  }
+  .login-content {
+    background-image: url(../assets/imgs/bg.png);
+    background-size: 38%;
+    background-repeat: repeat;
+    .logo-row {
+      padding-top: 1px;
+      height: 20% ; 
+      
+    }
+    .login-box {
+      padding: 20px 20px 20px 20px;
+      margin-top: 0px;
+      border-radius: 30px;
+    }
+    ion-row {
+      align-items: center;
+      text-align: center;
+    }
+    ion-item {
+      height: 50px !important;
+      background-size: 30%;
+      background-position: left;
+      background-position-y: -6px !important;
+      border-radius: 20px !important;
+      padding-left: 12px !important;
+      font-size: 12px !important;
+      font-weight: 300 !important ;
+      margin-bottom: 10px;
+      border: 2px solid #000;
+      border-bottom: 0px !important;
+      -webkit-box-shadow: none !important;
+      box-shadow: none !important;
+      border: #faae54 1px solid !important;
+      background-color: rgba(223, 223, 223, 0.3);
+      color: #faae54;
+      background-image: url("../assets/imgs/bgIcon.png");
+      background-repeat: no-repeat;
+      background-position-x: -8%;
+      background-position-y: 50% ;
+    }
+    ::-webkit-input-placeholder {
+      color: #faae54;
+      font-style: italic ;
+    }
+    .signup-col {
+      margin: 0px 16px 0px 16px;
+      padding-bottom: 20px;
+    }
+    .item-inner {
+      border-bottom-color: #ffffff !important;
+      box-shadow: none !important;
+    }
+    .submit-btn {
+      height: 46px;
+      background: rgba($color: #faae54, $alpha: 1.0);
+      border-radius: 30px !important;
+      border: 0px solid #ffffff;
+      text-transform: initial;
+    }
+    .register-btn {
+      background: transparent;
+      border-radius: 20px !important;
+      color: #faae54;
+      text-decoration: underline ;
+      text-transform: initial;
+      padding-bottom: 3%;
+    }
+    ion-icon{
+      color : #be8440 !important;
+     
+    }
+    
+    .mdp-btn {
+      background: transparent;
+      border-radius: 30px !important;
+      color: #e8d9d1;
+      font-style: normal;
+      padding-left: 5px;
+      padding-right: 5px;
+      text-transform: initial;
+      margin-left: 47%;
+      margin-bottom: 15px;
+    }
+
+
+    .notMember{
+      color: #e8d9d1;
+      align-content: center ;
+      align-items: center ;
+      margin-right: auto;
+      margin-left: auto;
+      display: table;
+    }
+  }
+
+  .datetime-md .datetime-placeholder{
+    color : #faae54 !important ;
+  }
+  .select-text{
+
+    color: #faae54 !important ;
+
+  }
+}
